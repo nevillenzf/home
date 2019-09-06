@@ -1,6 +1,6 @@
 import React from 'react';
-import './Stylesheet.css';
-
+import '../Stylesheet.css';
+import ContentHandler from './ContentHandler';
 class ContentWrapper extends React.Component {
   constructor(props) {
   super(props);
@@ -20,7 +20,8 @@ class ContentWrapper extends React.Component {
   render() {
     return (
       <div className="Content">
-      Hi, I'm a Content Wrapper
+        {/* Remember to add a menu here probs <Menu or just some bootstrap shit /> */}
+        <ContentHandler />
       </div>)
   }
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import PixContainer from './PixContainer';
-import './Stylesheet.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
+import '../Stylesheet.css';
 
 class Intro extends React.Component {
   constructor(props) {
@@ -33,14 +35,21 @@ class Intro extends React.Component {
             onMouseEnter={() => this.isHoveringOverControl(true)}
             onMouseLeave={() => this.isHoveringOverControl(false)}
             onWheel={(e) => this.mouseWheelKing(e)}>
+
             <div id="pix">
               <PixContainer/>
             </div>
+
             <div id="intro-text">
               <p>Hi, I'm Neville </p>
               <p>I am a senior at the <a id="wisc-link" href="https://www.wisc.edu"> University of Wisconsin-Madison </a>
-              seeking for software engineering/ development opportunities</p>
+              seeking software engineering/ development opportunities for Spring 2020</p>
             </div>
+
+            <div id="down-arrow">
+              <button className="Button" onClick={() =>this.moveToContent()}><FontAwesomeIcon icon={faAngleDoubleDown} /></button>
+            </div>
+
       </div>)
   }
 

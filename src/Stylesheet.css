@@ -23,6 +23,16 @@
   width: 60vw;
 }
 
+#down-arrow{
+  position: absolute;
+  color: purple;
+  bottom: 50px;
+  left: 50%;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
 .Content {
   text-align: center;
   position: relative;
@@ -37,6 +47,25 @@
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
   object-fit: cover;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+}
+
+button:hover {
+  opacity: 0.7;
+  color: blue;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 @keyframes App-logo-spin {
   from {
