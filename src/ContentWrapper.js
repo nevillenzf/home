@@ -24,6 +24,7 @@ class ContentWrapper extends React.Component {
       </div>)
   }
 
+  //Just makes sure that the component is consistent with the browser window
   updateWindowDimensions(){
     this.setState({height: window.innerHeight, width: window.innerWidth});
   }

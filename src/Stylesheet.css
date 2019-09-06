@@ -1,9 +1,26 @@
 .Intro {
   text-align: center;
   position: relative;
-  background-color: blue;
+  background-color: white;
   min-height: 100vh;
   min-width: 100vw;
+  color: black;
+}
+
+#pix {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  width: 40vw;
+  background-color: grey;
+  min-height: 100vh;
+}
+
+#intro-text{
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  width: 60vw;
 }
 
 .Content {
@@ -14,6 +31,13 @@
   min-width: 100vw;
 }
 
+.Pix {
+  width: 40vw;
+  min-height: 100vh;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+  object-fit: cover;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
