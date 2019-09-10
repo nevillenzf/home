@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Stylesheet.css';
 import ContentHandler from './ContentHandler';
+import SideBar from './SideBar';
+import {Tab,Row} from 'react-bootstrap';
+
 class ContentWrapper extends React.Component {
   constructor(props) {
   super(props);
@@ -19,9 +22,13 @@ class ContentWrapper extends React.Component {
 
   render() {
     return (
-      <div className="Content">
-        {/* Remember to add a menu here probs <Menu or just some bootstrap shit /> */}
-        <ContentHandler />
+      <div className="ContentWrapper">
+        <Tab.Container id="left-tabs-example" defaultActiveKey="AboutMe">
+          <Row>
+              <SideBar />
+              <ContentHandler />
+          </Row>
+        </Tab.Container>
       </div>)
   }
 

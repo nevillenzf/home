@@ -33,12 +33,28 @@
   height: 20px;
 }
 
-.Content {
+.ContentWrapper {
   text-align: center;
   position: relative;
-  background-color: black;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+.SideBar {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  width: 30vw;
+  min-height: 100vh;
+}
+
+.Content {
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+  width: 70vw;
+  background-color: grey;
+  min-height: 100vh;
 }
 
 .Pix {

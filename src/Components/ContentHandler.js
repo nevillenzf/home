@@ -12,7 +12,7 @@ class ContentHandler extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
   render() {
     return (
-      <div className="ContentHandler" >
+      <div className="Content" >
         {/* Selective rendering based off selection in menu - could probably use redux for this */}
         {this.renderContent()}
       </div>)

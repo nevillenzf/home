@@ -5,7 +5,7 @@ class AboutMe extends React.Component {
   render() {
     return (
       <div className="AboutMe" >
-        Hi this is some poop text
+        This is where AboutMe is going to live
       </div>)
   }
 }
