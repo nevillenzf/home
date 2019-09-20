@@ -1,12 +1,14 @@
 import React from 'react';
 import '../Stylesheet.css';
 import AboutMe from './AboutMe';
+import PortfolioTab from './PortfolioTab';
+import ResumeTab from './ResumeTab';
+import {connect} from 'react-redux';
 
 class ContentHandler extends React.Component {
   constructor(props) {
   super(props);
   this.renderContent = this.renderContent.bind(this);
-  this.currSection = "AboutMe";
   }
 
 //Created a component for the picture because might include onhover functions to interact with picture
@@ -19,7 +21,7 @@ class ContentHandler extends React.Component {
   }
 
   renderContent() {
-    if (this.currSection === "AboutMe")
+    if (this.props.currSection === "AboutMe")
     {
         return (
           <div>
@@ -27,7 +29,15 @@ class ContentHandler extends React.Component {
           </div>
         )
     }
-    else if (this.currSection === "SomethingElse")
+    else if (this.props.currSection === "Portfolio")
+    {
+      return (
+        <div>
+          <PortfolioTab />
+        </div>
+      )
+    }
+    else if (this.props.currSection === "SomethingElse")
     {
       return (
         <div>
@@ -35,7 +45,23 @@ class ContentHandler extends React.Component {
         </div>
       )
     }
+    else if (this.props.currSection === "Resume")
+    {
+      return (
+        <div>
+          <ResumeTab/>
+        </div>
+      )
+    }
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    currSection: state.currSection,
+  }
+}
+
+ContentHandler = connect(mapStateToProps)(ContentHandler);
 
 export default ContentHandler;

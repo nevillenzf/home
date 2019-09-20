@@ -1,7 +1,7 @@
 .Intro {
   text-align: center;
   position: relative;
-  background-color: white;
+  background-color: #282726;
   min-height: 100vh;
   min-width: 100vw;
   color: black;
@@ -20,6 +20,7 @@
   display: inline-block;
   *display: inline;
   vertical-align: top;
+  color: #E7E5E1;
   width: 60vw;
 }
 
@@ -31,6 +32,17 @@
   margin: 0 auto;
   width: 20px;
   height: 20px;
+}
+
+#up-arrow{
+  position: relative;
+  display:inline-block;
+  color: purple;
+  bottom: 50px;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  background: transparent;
 }
 
 .ContentWrapper {
@@ -45,6 +57,12 @@
   *display: inline;
   vertical-align: top;
   width: 30vw;
+  min-height: 95vh;
+}
+
+.SideBarContainer {
+  vertical-align: top;
+  width: 30vw;
   min-height: 100vh;
 }
 
@@ -56,6 +74,12 @@
   background-color: grey;
   min-height: 100vh;
 }
+/*Content members*/
+
+#portfolio {
+  width: 100%;
+  height: 100vh;
+}
 
 .Pix {
   width: 40vw;
@@ -65,6 +89,23 @@
   object-fit: cover;
 }
 
+.PortfolioSlide {
+  position: relative;
+  width: 70vw;
+  min-height: 100vh;
+  opacity: 1;
+  object-fit: cover;
+
+}
+
+.PortfolioBG {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+
+}
+
 button {
   width: 30px;
   height: 30px;
@@ -72,6 +113,8 @@ button {
   font-family: inherit;
   border: 0;
   padding: 0;
+  background: transparent;
+  color: ;
 }
 
 button:hover {
@@ -82,6 +125,26 @@ button:hover {
 
 button:focus {
   outline: none;
+}
+
+#wisc-link {
+  color: #58A855;
+  text-decoration: none;
+}
+
+#wisc-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+#wisc-link:visited {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+.UpButton {
+  color: white;
 }
 @keyframes App-logo-spin {
   from {

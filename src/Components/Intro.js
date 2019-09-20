@@ -42,7 +42,8 @@ class Intro extends React.Component {
 
             <div id="intro-text">
               <p>Hi, I'm Neville </p>
-              <p>I am a senior at the <a id="wisc-link" href="https://www.wisc.edu"> University of Wisconsin-Madison </a>
+              <p>I an aspiring software engineer at the <a id="wisc-link" href="https://www.wisc.edu">
+              University of Wisconsin-Madison </a>
               seeking software engineering/ development opportunities for Spring 2020</p>
             </div>
 
@@ -69,7 +70,8 @@ class Intro extends React.Component {
     // deltaX is horizontal movement - positive (down) / negative (up)
     if (event.deltaY > 2)
     {
-      this.moveToContent();
+      //DISABLED MOUSE WHEEL
+      //this.moveToContent();
     }
   }
 
