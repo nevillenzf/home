@@ -29,6 +29,9 @@ class SideBar extends React.Component {
             <Nav.Link eventKey="AboutMe">About Me</Nav.Link>
           </Nav.Item>
           <Nav.Item>
+            <Nav.Link eventKey="Skills">Skills</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link eventKey="Portfolio">Portfolio</Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -73,9 +76,6 @@ class SideBar extends React.Component {
     }
   }
 
-  openResume = () => {
-
-  }
 }
 
 export default SideBar;

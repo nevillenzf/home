@@ -1,7 +1,6 @@
 import React from 'react';
 import PixContainer from './PixContainer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
+
 import '../Stylesheet.css';
 
 class Intro extends React.Component {
@@ -11,6 +10,7 @@ class Intro extends React.Component {
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   this.isHoveringOverControl = this.isHoveringOverControl.bind(this);
   this.isHoveringOver = false;
+  this.moveToContent = this.moveToContent.bind(this);
   }
 
 
@@ -37,18 +37,7 @@ class Intro extends React.Component {
             onWheel={(e) => this.mouseWheelKing(e)}>
 
             <div id="pix">
-              <PixContainer/>
-            </div>
-
-            <div id="intro-text">
-              <p>Hi, I'm Neville </p>
-              <p>I an aspiring software engineer at the <a id="wisc-link" href="https://www.wisc.edu">
-              University of Wisconsin-Madison </a>
-              seeking software engineering/ development opportunities for Spring 2020</p>
-            </div>
-
-            <div id="down-arrow">
-              <button className="Button" onClick={() =>this.moveToContent()}><FontAwesomeIcon icon={faAngleDoubleDown} /></button>
+              <PixContainer moveToContent={this.moveToContent}/>
             </div>
 
       </div>)
@@ -71,7 +60,8 @@ class Intro extends React.Component {
     if (event.deltaY > 2)
     {
       //DISABLED MOUSE WHEEL
-      //this.moveToContent();
+      //event.preventDefault();
+      this.moveToContent();
     }
   }
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import '../Stylesheet.css';
-import ContentHandler from './ContentHandler';
-import SideBar from './SideBar';
-import {Tab,Row} from 'react-bootstrap';
+import Corkboard from './Corkboard';
 
 class ContentWrapper extends React.Component {
   constructor(props) {
@@ -22,13 +20,8 @@ class ContentWrapper extends React.Component {
 
   render() {
     return (
-      <div className="ContentWrapper">
-        <Tab.Container id="left-tabs-example" defaultActiveKey="AboutMe">
-          <Row>
-              <SideBar />
-              <ContentHandler />
-          </Row>
-        </Tab.Container>
+      <div className="contentWrapper">
+        <Corkboard />
       </div>)
   }
 

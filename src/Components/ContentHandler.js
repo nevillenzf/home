@@ -3,6 +3,7 @@ import '../Stylesheet.css';
 import AboutMe from './AboutMe';
 import PortfolioTab from './PortfolioTab';
 import ResumeTab from './ResumeTab';
+import InterestTab from './InterestTab';
 import {connect} from 'react-redux';
 
 class ContentHandler extends React.Component {
@@ -37,11 +38,19 @@ class ContentHandler extends React.Component {
         </div>
       )
     }
-    else if (this.props.currSection === "SomethingElse")
+    else if (this.props.currSection === "Skills")
     {
       return (
         <div>
           Lorem ipsum sum...
+        </div>
+      )
+    }
+    else if (this.props.currSection === "Interests")
+    {
+      return (
+        <div>
+          <InterestTab/>
         </div>
       )
     }

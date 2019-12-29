@@ -2,6 +2,7 @@ import React from 'react';
 import '../Stylesheet.css';
 import Intro from './Intro';
 import ContentWrapper from './ContentWrapper';
+import SocialBar from './SocialBar';
 
 class WebsiteWrapper extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class WebsiteWrapper extends React.Component {
       />
         <Intro />
         <ContentWrapper />
+        <SocialBar />
       </div>)
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Stylesheet.css';
-import {Carousel} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import visualeyes from '../Images/gifs/home.gif';
 
 class PortfolioTab extends React.Component {
@@ -8,31 +8,28 @@ class PortfolioTab extends React.Component {
   render() {
     return (
       <div id="portfolio" >
-        <Carousel interval={null}>
-          <Carousel.Item>
-          <div className="PortfolioBG">
-            <img src={visualeyes} alt="VisualEyesBG" position="absolute" object-fit="fill" width="100%" height="100%"/>
-          </div>
-          <div className="PortfolioSlide">
-            <img src={visualeyes} alt="VisualEyes" />
-          </div>
-            <Carousel.Caption>
-              <a href="https://github.com/dannysj/visualeyes"><h2>VisualEyes</h2></a>
-              <p>Delivering Information Interactively through the world of Augmented Reality and Computer Vision.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item>
-          <div className="PortfolioSlide">
-            <img src="https://media.giphy.com/media/MFVAwsSghTKOeslhwQ/giphy-downsized-large.gif" alt="Second slide" />
-          </div>
-          <Carousel.Caption>
-          <a href="https://github.com/dannysj/visualeyes"><h2>Second slide</h2></a>
-          <p>Delivering Information Interactively through the world of Augmented Reality and Computer Vision.</p>
-          </Carousel.Caption>
-          </Carousel.Item>
-
-        </Carousel>
+      <Card >
+        <Card.Header>UW - Live Well Roommate Finder Web Application</Card.Header>
+        <Card.Body>
+          <Card.Title> Secondary thang</Card.Title>
+          <Card.Text>
+            A Full-Stack Roommate finder web application complete with a backend web server with a database.
+          </Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+        <Card.Footer className="text-muted"> Reactjs | Flask | SQLAlchemy | PostgreSQL </Card.Footer>
+        </Card>
+        <Card >
+          <Card.Header>Featured</Card.Header>
+          <Card.Body>
+            <Card.Title>Special title treatment</Card.Title>
+            <Card.Text>
+              With supporting text below as a natural lead-in to additional content.
+            </Card.Text>
+            <button >Go somewhere</button>
+          </Card.Body>
+          <Card.Footer className="text-muted"> </Card.Footer>
+          </Card>
       </div>)
   }
 }
