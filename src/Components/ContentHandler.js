@@ -42,7 +42,7 @@ class ContentHandler extends React.Component {
     {
       return (
         <div>
-          Lorem ipsum sum...
+          <AboutMe />
         </div>
       )
     }

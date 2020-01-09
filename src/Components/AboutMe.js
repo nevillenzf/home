@@ -1,13 +1,32 @@
 import React from 'react';
 import '../Stylesheet.css';
+import PostItNote from './PostItNote';
+import FadeIn from 'react-fade-in';
+
+import 'react-image-lightbox/style.css';
+
 class AboutMe extends React.Component {
-//Created a component for the picture because might include onhover functions to interact with picture
+
+
   render() {
     return (
-      <div id="about_me" >
-        <h3>Hey There.</h3>
-      </div>)
+      <FadeIn className="corkboardContent">
+          <PostItNote height={"500px"}
+                    width={"800px"}
+                    text = {["Neville Ng", "Software Engineer"]}
+                    color = "note"
+                    fontSize = {40}
+                     >
+          </PostItNote>
+      </FadeIn>
+    )
   }
+
+  componentDidMount()
+  {
+
+  }
+
 }
 
 export default AboutMe;

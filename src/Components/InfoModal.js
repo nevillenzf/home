@@ -1,7 +1,8 @@
 import React from 'react';
 import '../Stylesheet.css';
-import {Modal, Button} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import Project from './Project';
+import Experience from './Experience';
 
 class InfoModal extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
@@ -26,7 +27,17 @@ class InfoModal extends React.Component {
     if (this.type === "Project")
     {
       return (
-        <Project info={this.props.projectInfo}/>
+        <div>
+          <Project info={this.props.projectInfo}/>
+        </div>
+      )
+    }
+    else if (this.type === "Experience")
+    {
+      return (
+        <div>
+          <Experience info={this.props.experienceInfo}/>
+        </div>
       )
     }
   }
@@ -40,8 +51,7 @@ class InfoModal extends React.Component {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             className="modalWrapper"
-            centered
-          >
+            centered >
           <Modal.Header closeButton>
              <Modal.Title id="example-custom-modal-styling-title">
               <div className="basicInfo">
@@ -49,7 +59,6 @@ class InfoModal extends React.Component {
                  <div className="infoPeriod">{this.props.basicInfo.period}</div>
               </div>
              </Modal.Title>
-
            </Modal.Header>
           <Modal.Body>
             {this.renderBody()}

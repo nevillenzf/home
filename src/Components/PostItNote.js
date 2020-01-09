@@ -25,6 +25,7 @@ class PostItNote extends React.Component {
     this.color = 'rgba(255, 255, 165, 1)';
     this.image = '';
     this.tilt = 'rotate(0deg)';
+    this.fontSize = 24
     //Check for tilt
     if (this.props.tilt)
     {
@@ -40,6 +41,11 @@ class PostItNote extends React.Component {
     //Check for color
     this.choosePostItColor(this.props.color);
 
+    if (this.props.fontSize !== undefined)
+    {
+      this.fontSize = this.props.fontSize;
+    }
+
     this.postItWrapperStyle = {
       width: this.width,
       height: this.height,
@@ -53,6 +59,15 @@ class PostItNote extends React.Component {
       transform: this.tilt,
       backgroundImage: this.image,
       backgroundRepeat: 'repeat',
+      fontSize: this.fontSize,
+    };
+
+    this.postItSoloStyle = {
+      height: "100%",
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     };
 
     this.postItTitleStyle = {
@@ -60,21 +75,17 @@ class PostItNote extends React.Component {
       fontSize: 36
     };
 
-    this.state = {showModal: false};
-
-    this.toggleModal = this.toggleModal.bind(this);
-  }
-
-
-
-  toggleModal(command){
-    if (command === "hide")
-    {
-      this.setState({showModal: false});
+    this.twoLinerTopStyle = {
+      marginTop: '20px',
+      marginLeft: 20,
+      fontSize: 36,
+      textAlign: 'left',
     }
-    else if (command === "show")
-    {
-      this.setState({showModal: true});
+
+    this.twoLinerBotStyle = {
+      bottom: 20,
+      right: 20,
+      textAlign: 'right',
     }
   }
 
@@ -96,7 +107,6 @@ class PostItNote extends React.Component {
           if (newTemp.includes("bottom") || newTemp.includes("left") || newTemp.includes("right") ||
               newTemp.includes("bl") || newTemp.includes("br"))
           {
-            console.log("includes something");
             this.boxShadow = "";
           }
           else
@@ -144,16 +154,6 @@ class PostItNote extends React.Component {
         }
         else this.color = color;
       }
-    }
-  }
-
-
-
-  handleClick(){
-    //toggle open of close extra info
-    if (this.state.showModal === false)
-    {
-      this.toggleModal("show");
     }
   }
 
@@ -273,21 +273,40 @@ class PostItNote extends React.Component {
     {
       if (this.props.text.length > 0)
       {
+        //determine what type of post it this is too, two-liner, menu, list
+        //menu and list is the same except menu has hover effect
+        //two liner is basically two lines of text top left and bottom right of card
         if (Array.isArray(this.props.text))
         {
-          var content = this.props.text.map((text, idx) => {
-              return(
-                <div  className="PostItText"
-                      style={this.postItTextStyle}
-                      key={idx}>{text}
-                </div>
-              )
-            })
+          if (this.props.text.length > 2 || this.props.type !== "two-liner")
+          {
+            var content = this.props.text.map((text, idx) => {
+                return(
+                  <div  className={this.props.type === "menu" ? "PostItMenuText" :"PostItText"}
+                        style={this.postItTextStyle}
+                        key={idx}
+                        onClick={ this.props.type === "menu" ? ()=>{this.props.updateContent(text)}: null}>{text}
+                  </div>
+                )
+              })
+          }
+          else
+          //two-liner
+          {
+            content = <div className="PostItTwoLinerBody">
+                        <div  className="PostItText"
+                        style={this.twoLinerTopStyle}
+                        >{this.props.text[0]} </div>
+                        <div  className="PostItText"
+                        style={this.twoLinerBotStyle}
+                        >{this.props.text.length > 1 ? this.props.text[1] : ""} </div>
+                      </div>
 
+          }
         }
         else return (
-          content = <div  className="PostItText"
-                style={this.postItTextStyle}
+          content = <div  className = {this.props.text === "Find out more!" ? "PostItMenuText" : "PostItText"}
+                          style={this.postItSoloStyle}
                 >{this.props.text} </div>
         )
 
@@ -305,6 +324,7 @@ class PostItNote extends React.Component {
     return (
       <div  className="PostItWrapper"
             style={this.postItWrapperStyle}
+            onClick={this.props.onClick !== undefined ? this.props.onClick : null}
             >
         {this.renderTape()}
         {this.renderPin()}
@@ -312,9 +332,7 @@ class PostItNote extends React.Component {
         <div className="PostItTitle" style={this.postItTitleStyle}>
           {this.props.title ? this.props.title : ""}
         </div>
-        <div className="PostItBody">
           {this.renderText()}
-        </div>
       </div>
     )
   }

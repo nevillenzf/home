@@ -6,6 +6,8 @@
   min-width: 100vw;
   width: 100vw;
   color: black;
+  font-family: 'Playfair Display', serif;
+
 }
 
 html,body {
@@ -213,6 +215,10 @@ button.socialBtn:hover {
   background-size: 100% 110%;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .PolaroidWrapper {
@@ -223,7 +229,7 @@ button.socialBtn:hover {
 
 .PolaroidWrapper:hover{
   transition: 0.5s ease;
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   z-index: 5;
   cursor: pointer;
 }
@@ -237,9 +243,17 @@ button.socialBtn:hover {
 .PostItBody {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.PostItText:hover {
+.PostItTwoLinerBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.PostItMenuText:hover {
   transition: 0.5s;
   transform: scale(1.2);
 }
@@ -268,16 +282,26 @@ button.socialBtn:hover {
   background-size: 120% 100%;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
-.corkboardContent {
+.corkboardMenu {
   display: flex;
-  width: 100%;
+  width: 30%;
   height: 100%;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
 
+.corkboardContent {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .ModalWrapper {
@@ -331,4 +355,63 @@ button.socialBtn:hover {
 
 .infoPeriod {
   font-size: 15px !important;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  font-size: 24px;
+}
+
+.navContent {
+  cursor: pointer;
+
+}
+
+.navContent:hover {
+  transition: 0.5s ease;
+  transform: scale(1.1);
+}
+
+.introduction {
+  font-size: 48px;
+}
+
+.resumeButton {
+  background-color: black !important;
+}
+
+.resumeButton:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnWrapper{
+  width: 200px;
+  height: 50px;
+}
+
+.infoContent{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.desc {
+  display: flex;
+  flex-direction: row;
+
 }

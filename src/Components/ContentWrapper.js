@@ -21,7 +21,7 @@ class ContentWrapper extends React.Component {
   render() {
     return (
       <div className="contentWrapper">
-        <Corkboard />
+        <Corkboard updateContent={this.props.updateContent} currContent={this.props.currContent}/>
       </div>)
   }
 

@@ -16,6 +16,7 @@ class Pin extends React.Component {
     this.rotation = 0
     this.handleColor = this.handleColor.bind(this);
     this.handlePosition = this.handlePosition.bind(this);
+    this.position = 'absolute'
 
     //Handle pin color
     this.handleColor(this.props.color)
@@ -23,12 +24,17 @@ class Pin extends React.Component {
     this.handlePosition( this.props.type,
                           this.props.polaroidWidth,
                           this.props.polaroidHeight)
-
+    //determine if absolute or relative
+    if (!this.props.polaroidWidth && !this.props.polaroidHeight)
+    {
+      this.position = 'relative';
+    }
     this.pinStyle = {
       width: 30,
+      minWidth: 30,
       height: 30,
       backgroundColor : this.color,
-      position: 'absolute',
+      position: this.position,
       top: this.topPos,
       left: this.leftPos,
       transform: this.rotation,

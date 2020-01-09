@@ -140,10 +140,11 @@ class Polaroid extends React.Component {
 
   handleClick(){
     //toggle open of close extra info
-    if (this.state.showModal === false)
+    if (this.state.showModal === false && this.props.basicInfo)
     {
       this.toggleModal("show");
     }
+    //else open up lightbox
   }
 
   renderTape(){
@@ -270,6 +271,32 @@ class Polaroid extends React.Component {
     }
   }
 
+  renderModal()
+  {
+    if (this.props.basicInfo && this.props.projectInfo)
+    {
+      return(
+        <div className="ModalWrapper">
+          <InfoModal  show={this.state.showModal}
+                      onHide={() => this.toggleModal("hide")}
+                      projectInfo={this.props.projectInfo}
+                      basicInfo={this.props.basicInfo}/>
+        </div>
+      )
+    }
+    else if (this.props.basicInfo && this.props.experienceInfo)
+    {
+      return(
+        <div className="ModalWrapper">
+          <InfoModal  show={this.state.showModal}
+                      onHide={() => this.toggleModal("hide")}
+                      experienceInfo={this.props.experienceInfo}
+                      basicInfo={this.props.basicInfo}/>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div  className="PolaroidWrapper"
@@ -285,12 +312,7 @@ class Polaroid extends React.Component {
           </div>
           {this.renderText()}
         </div>
-        <div className="ModalWrapper">
-          <InfoModal  show={this.state.showModal}
-                      onHide={() => this.toggleModal("hide")}
-                      projectInfo={this.props.projectInfo}
-                      basicInfo={this.props.basicInfo}/>
-        </div>
+        {this.renderModal()}
       </div>
     )
   }

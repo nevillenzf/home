@@ -11,6 +11,14 @@ class Intro extends React.Component {
   this.isHoveringOverControl = this.isHoveringOverControl.bind(this);
   this.isHoveringOver = false;
   this.moveToContent = this.moveToContent.bind(this);
+  this.setCurrContent = this.setCurrContent.bind(this);
+  this.updateText = this.updateText.bind(this);
+
+  this.state = {
+      text: "",
+      textList: ["an Engineer","a Designer","a Dreamer","Neville"],
+      displayBtn: false,
+    }
   }
 
 
@@ -20,6 +28,7 @@ class Intro extends React.Component {
 
   componentDidMount(){
     this.updateWindowDimensions(); //Call Method to set initial height and width of component
+    this.updateText(0);
     window.addEventListener("resize", this.updateWindowDimensions());
     window.addEventListener("keydown", this.keyDownKing);
   }
@@ -29,15 +38,28 @@ class Intro extends React.Component {
     window.removeEventListener("keydown", this.keyDownKing);
   }
 
+  setCurrContent(newContent){
+    this.props.updateContent(newContent);
+    this.moveToContent();
+  }
+
   render() {
     return (
-      <div  className="Intro"
+      <div  className= "Intro"
             onMouseEnter={() => this.isHoveringOverControl(true)}
             onMouseLeave={() => this.isHoveringOverControl(false)}
             onWheel={(e) => this.mouseWheelKing(e)}>
-
+            <div className= "navBar">
+              <div className= "navContent" onClick={() => this.setCurrContent("About Me")}> About Me. </div>
+              <div className= "navContent" onClick={() => this.setCurrContent("Skills")}> Skills. </div>
+              <div className= "navContent" onClick={() => this.setCurrContent("Experience")}> Experience. </div>
+              <div className= "navContent" onClick={() => this.setCurrContent("Projects")}> Projects. </div>
+              <div className= "navContent" onClick={() => this.setCurrContent("Hobbies")}> Hobbies. </div>
+            </div>
             <div id="pix">
-              <PixContainer moveToContent={this.moveToContent}/>
+              <PixContainer moveToContent={this.moveToContent}
+                            text={this.state.text}
+                            displayBtn={this.state.displayBtn} />
             </div>
 
       </div>)
@@ -63,6 +85,38 @@ class Intro extends React.Component {
       //event.preventDefault();
       this.moveToContent();
     }
+  }
+
+  dynamicTextDisplay(pos, charPos) {
+    if (this.state.textList[pos][charPos] !== undefined)
+    {
+      this.setState({text: this.state.text + this.state.textList[pos][charPos]});
+    }
+  }
+
+  updateText(pos) {
+    var curr = this;
+    var charPos = 0;
+    curr.setState({text: ""});
+
+    //Kick start typing process
+    //Frequency is 1000/curr.state.textList[pos].length + 1
+    var someTimer = setInterval(() => {
+      curr.dynamicTextDisplay(pos, charPos);
+      charPos++;
+    }, 1000/curr.state.textList[pos].length);
+    setTimeout(function () {
+        clearInterval(someTimer);
+        if (pos < curr.state.textList.length - 1)
+        {
+          //curr.setState({text: curr.state.text + "what "});
+          curr.updateText(pos + 1);
+        }
+        else
+        {
+          curr.setState({displayBtn: true});
+        }
+    }, 2000);
   }
 
   //Scrolls to the Content Component

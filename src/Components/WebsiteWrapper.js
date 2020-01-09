@@ -5,8 +5,22 @@ import ContentWrapper from './ContentWrapper';
 import SocialBar from './SocialBar';
 
 class WebsiteWrapper extends React.Component {
-  render() {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      currContent: 'Projects',
+    }
+    this.updateContent = this.updateContent.bind(this);
+  }
+
+  updateContent(newContent)
+  {
+    //console.log(newContent);
+    this.setState({currContent: newContent});
+  }
+
+  render() {
     return (
       <div className="WebsiteWrapper">
       <script src="https://kit.fontawesome.com/620e0a4f1e.js"></script>
@@ -16,8 +30,8 @@ class WebsiteWrapper extends React.Component {
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossOrigin="anonymous"
       />
-        <Intro />
-        <ContentWrapper />
+        <Intro updateContent={this.updateContent}/>
+        <ContentWrapper currContent={this.state.currContent} updateContent={this.updateContent}/>
         <SocialBar />
       </div>)
   }
