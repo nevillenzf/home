@@ -14,7 +14,7 @@ class Projects extends React.Component {
       <FadeIn className="corkboardContent">
           <Polaroid height={320}
                     width={300}
-                    pin = "top right bottom left"
+                    pin = "tl tr"
                     text = "Cadence, '19"
                     image = '/Cadence-1.png'
                     basicInfo = {{  title:'Cadence',
@@ -42,7 +42,7 @@ class Projects extends React.Component {
 
           <Polaroid height={320}
                     width={300}
-                    tape = "top black"
+                    pin = "tl tr"
                     text = "This Website!, '19"
                     image = '/grad-pic-1.jpg'
                     basicInfo = {{  title:'New React Website',
@@ -64,7 +64,7 @@ class Projects extends React.Component {
 
           <Polaroid height={320}
                     width={300}
-                    tape = "top black"
+                    pin = "tl tr"
                     text = "VisualEyes, '18"
                     image = '/visualeyes-1.png'
                     basicInfo = {{  title:'VisualEyes',

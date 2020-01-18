@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Stylesheet.css';
 import Corkboard from './Corkboard';
+import ContentController from './ContentController';
 
 class ContentWrapper extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class ContentWrapper extends React.Component {
   render() {
     return (
       <div className="contentWrapper">
-        <Corkboard updateContent={this.props.updateContent} currContent={this.props.currContent}/>
+        <ContentController updateContent={this.props.updateContent} currContent={this.props.currContent}/>
       </div>)
   }
 

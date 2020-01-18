@@ -13,9 +13,10 @@ class AboutMe extends React.Component {
       <FadeIn className="corkboardContent">
           <PostItNote height={"500px"}
                     width={"800px"}
-                    text = {["Neville Ng", "Software Engineer"]}
+                    text = {[ "Hey again, Neville here! I’m a senior at the University of Wisconsin-Madison graduating in Spring 2020.",
+                              "and am looking for opportunities . I develop and design full stack web applications and websites."]}
                     color = "note"
-                    fontSize = {40}
+                    fontSize = {26}
                      >
           </PostItNote>
       </FadeIn>
