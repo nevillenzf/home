@@ -2,7 +2,7 @@ import React from 'react';
 import '../Stylesheet.css';
 import Tape from './Tape';
 import Pin from './Pin';
-import InfoModal from './InfoModal';
+import InfoModal from '../InfoModal';
 
 class Polaroid extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture

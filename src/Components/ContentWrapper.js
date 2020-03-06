@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Stylesheet.css';
-import Corkboard from './Corkboard';
 import ContentController from './ContentController';
 
 class ContentWrapper extends React.Component {

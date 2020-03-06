@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Stylesheet.css';
-import PostItNote from './PostItNote';
 import FadeIn from 'react-fade-in';
+import { Image } from 'react-bootstrap';
 
 import 'react-image-lightbox/style.css';
 
@@ -10,16 +10,20 @@ class AboutMe extends React.Component {
 
   render() {
     return (
-      <FadeIn className="corkboardContent">
-          <PostItNote height={"500px"}
-                    width={"800px"}
-                    text = {[ "Hey again, Neville here! I’m a senior at the University of Wisconsin-Madison graduating in Spring 2020.",
-                              "and am looking for opportunities . I develop and design full stack web applications and websites."]}
-                    color = "note"
-                    fontSize = {26}
-                     >
-          </PostItNote>
-      </FadeIn>
+        <div className = "infoCard">
+          <div className ="backCard">
+            <div className = "frontCard">
+              <Image src="portrait-1.jpg" rounded fluid className="portrait"/>
+              <div className = "self-intro-1"> Hey, I'm Neville! I'm a Senior at the University of Wisconsin-Madison
+                  studying Computer Sciences and am <b>actively looking for opportunities </b>!
+              </div>
+              <div className = "self-intro-2"> I'm a creative that loves new technologies and am constantly trying
+               to better myself. I am interested in <b>Full time Full-Stack opportunities </b> starting
+               <b> Summer 2020 </b> when I graduate!
+              </div>
+            </div>
+          </div>
+        </div>
     )
   }
 

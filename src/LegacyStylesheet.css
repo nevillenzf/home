@@ -186,36 +186,8 @@ button.socialBtn:hover {
 button.sideBtn {
   background-color: rgba(0, 0, 0, 0.2);
   font-family: 'Playfair Display', serif;
-  display: flex;
-  flex-direction: horizontal;
-  justify-content: center;
 
 }
-
-button.selectedBtn {
-  background-color: rgba(0, 0, 0, 1);
-  font-family: 'Playfair Display', serif;
-  display: flex;
-  flex-direction: horizontal;
-  justify-content: center;
-}
-
-button.selectedBtn:hover {
-  transition: 0.3s;
-  background-color: rgba(0, 0, 0, 1) !important;
-}
-
-button.sideBtn:hover {
-  transition: 0.3s;
-  background-color: rgba(0, 0, 0, 1) !important;
-}
-
-button.pageBullet {
-  border: 0px;
-  background-color: rgba(0,0,0,0);
-  color: rgba(0,0,0,0.7);
-}
-
 #wisc-link {
   color: #58A855;
   text-decoration: none;
@@ -255,9 +227,74 @@ button.pageBullet {
 
 }
 
-.contentController {
-  background: url('/grad-pic-2.jpg'), linear-gradient(rgba(151, 153, 119, 0.7),rgba(39, 39, 39, 0.7));
+.PolaroidWrapper {
+  position: relative;
+  z-index: 4;
+  margin-top: 50px;
+}
+
+.PolaroidWrapper:hover{
+  transition: 0.5s ease;
+  transform: scale(1.1) !important;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.PostItWrapper {
+  position: relative;
+  z-index: 4;
+  margin-top: 50px;
+}
+
+.PostItBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.PostItTwoLinerBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.PostItMenuText:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
+.PostItWrapper:hover{
+  cursor: pointer;
+}
+
+.PolaroidWrapper:hover .PolaroidPic{
+  transition: 0.5s ease;
+  opacity: 1.0;
+}
+
+.PolaroidPic{
+  opacity: 0.8;
+}
+
+.Tape {
+  z-index: 2;
+}
+
+.Corkboard {
+  background: url('./Images/corkboard.jpg');
   opacity: 0.9;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.contentController {
+  background: url('/grad-pic-2.jpg'), linear-gradient(rgba(151, 153, 119, 1),rgba(39, 39, 39, 1));
+  opacity: 0.7;
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -265,6 +302,24 @@ button.pageBullet {
   height: 100vh;
   display: flex;
   flex-direction: row;
+}
+
+.corkboardMenu {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.corkboardContent {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .ModalWrapper {
@@ -364,126 +419,17 @@ button.pageBullet {
   height: 50px;
 }
 
-.infoContainer{
+.infoContent{
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.infoContent {
-  display: flex;
-  flex-direction: column;
-  height: 60vh;
-  width: 80%;
-  opacity: 1;
-}
-
-.pagesControl {
-  position: relative;
-  top: -40px;
-  display: flex;
-  flex-direction: row-reverse;
-  background-color: rgba(0,0,0,0);
-  padding-right: 5%;
-  height: 40px;
-}
-
-.infoCard {
-  height: 100%;
-  font-family: 'Playfair Display', serif;
-}
-
-.backCard {
-  width: 90%;
-  height: 90%;
-  border: rgba(203, 202, 183, 0.8) 4px solid;
-  position: relative;
-  top: 30px;
-  left: 30px;
-}
-
-.frontCard {
-  width: 100%;
-  height: 100%;
-  position:relative;
-  background-color: rgba(0,0,0,0.8);
-  top: -30px;
-  left: -30px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  font-family: 'Quicksand', sans-serif;
-  display: flex;
-  flex-direction: column;
-}
-
-.frontCard:hover {
-  top: -15px;
-  left: -15px;
-  background-color: rgba(0,0,0,0.95);
-
-}
-
-.portrait {
-  height: 250px;
-  width: 250px;
-  top: -40px;
-  left: -40px;
-  position: absolute;
-}
-
-.self-intro-1 {
-  position: absolute;
-  right: 0px;
-  top: 50px;
-  width: 70%;
-  text-align: left;
-
-}
-
-.self-intro-2 {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  text-align: left;
-  font-size: 20px;
-
-}
-
-.column-1 {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 20px;
-  width: 50%;
-}
-
-.column-2 {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 20px;
-  width: 50%;
-}
-
-.title {
-  font-size: 24px;
-  text-align: left;
-  height: 30%;
-  margin: 20px;
-}
-
-.technologies {
+.desc {
   display: flex;
   flex-direction: row;
-}
 
-.description {
-  font-size: 20px;
 }

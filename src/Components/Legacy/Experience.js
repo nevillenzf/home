@@ -6,6 +6,7 @@ import Pin from './Pin';
 
 class Experience extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
+
   render() {
     return (
       <div className="projectInfo" >

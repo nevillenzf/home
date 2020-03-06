@@ -7,7 +7,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import 'react-image-lightbox/style.css';
 
-class Projects extends React.Component {
+class Hobbies extends React.Component {
 
 
   render() {
@@ -32,4 +32,4 @@ class Projects extends React.Component {
 
 }
 
-export default Projects;
+export default Hobbies;

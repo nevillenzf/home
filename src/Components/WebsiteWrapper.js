@@ -16,7 +16,6 @@ class WebsiteWrapper extends React.Component {
 
   updateContent(newContent)
   {
-    //console.log(newContent);
     this.setState({currContent: newContent});
   }
 

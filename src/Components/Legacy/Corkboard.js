@@ -54,7 +54,7 @@ class Corkboard extends React.Component {
                    />
          <PostItNote height={320}
                      width={320}
-                     pin = "top"
+                     tape = "top black"
                      title = "To Do List"
                      text = {["Get a Job"]}
                      color = "rgba(248, 202, 250, 1)"
