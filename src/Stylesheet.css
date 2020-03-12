@@ -419,6 +419,7 @@ button.pageBullet {
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .frontCard:hover {
@@ -485,5 +486,43 @@ button.pageBullet {
 }
 
 .description {
-  font-size: 20px;
+  font-size: 18px;
+  text-align: left;
+  margin: 20px;
+  overflow: scroll;
+}
+
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.position {
+  font-size: 18px;
+}
+
+.descIcon {
+  padding-right: 5px;
+}
+
+.topScroller {
+  width: 90%;
+  height: 30px;
+  background-color: rgba(0,0,0, 0.7);
+  margin-right: 30px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bottomScroller {
+  width: 90%;
+  height: 30px;
+  background-color: rgba(0,0,0, 0.7);
+  margin-right: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
 }

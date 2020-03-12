@@ -9,7 +9,7 @@ class WebsiteWrapper extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      currContent: 'Projects',
+      currContent: 'About Me',
     }
     this.updateContent = this.updateContent.bind(this);
   }

@@ -3,7 +3,7 @@ import '../Stylesheet.css';
 import PostItNote from './PostItNote';
 import Projects from './Projects';
 import Experiences from './Experiences';
-import AboutMe from './AboutMe';
+import AboutMe from '../AboutMe';
 import 'react-image-lightbox/style.css';
 
 class Corkboard extends React.Component {

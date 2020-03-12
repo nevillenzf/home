@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Stylesheet.css';
-import FadeIn from 'react-fade-in';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as solidSquare } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as regSquare } from '@fortawesome/free-regular-svg-icons';
-import update from 'immutability-helper';
 
 import 'react-image-lightbox/style.css';
 
@@ -13,7 +13,8 @@ class Experiences extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {pageList: [false, false]};
+    this.state = {pageList: [false, false],
+                  scrollable: [false, false]}; //false means that it's not scrollable [TOP,BOTTOM]
     //Set the current page to this.props.currPage
     this.experiences = [{ company: "Buildout", 
                           position: "Software Engineering Intern", 
@@ -33,8 +34,55 @@ class Experiences extends React.Component {
                            for architecture simulation to facilitate the debug and analysis processes."]
 
                         }];
-    //keep track of currContent and display information when a new content is selected
-    this.renderContent = this.renderContent.bind(this);
+  }
+
+  checkIfScrollable(target) {
+    //Do calculations to determine if scrollable
+    //Need to do when it is instantiated too
+    //This happens when we scroll to the bottom
+
+    //Scroll movement difference
+    var scrollVar = target.scrollHeight - target.scrollTop - target.clientHeight;
+    var temp = this.state.scrollable;
+
+    //
+    if (scrollVar < 5 && scrollVar >= 0)
+    {
+      console.log("Bottom div should not appear");
+      if (this.state.scrollable[1])
+      {
+        temp[1] = false;
+
+        this.setState({scrollable: temp});
+      }
+    }
+    else 
+    {
+      if (!this.state.scrollable[1])
+      {
+        temp[1] = true;
+
+        this.setState({scrollable: temp});
+      }
+    }
+
+    //This happens when we can onlyl scroll to the bottom
+    if (target.scrollTop < 5)
+    {
+      if (this.state.scrollable[0])
+      {
+        temp[0] = false;
+        this.setState({scrollable: temp});
+      }
+    }
+    else 
+    {
+      if (!this.state.scrollable[0])
+      {
+        temp[0] = true;
+        this.setState({scrollable: temp});
+      }
+    }
   }
 
   toggleState(page, idx, status)
@@ -71,10 +119,6 @@ class Experiences extends React.Component {
     }
   }
 
-  renderContent(){
-    
-  }
-
   render() {
     return (
         <div className = "infoCard">
@@ -99,11 +143,34 @@ class Experiences extends React.Component {
           <div className ="backCard">
             <div className = "frontCard">
               <div className = "title">
-                {this.experiences[this.props.currPage].company}
+                <div><b>{this.experiences[this.props.currPage].company}</b></div>
+                <div className = "position">{this.experiences[this.props.currPage].position}</div>
+
               </div>
-              <div className = "description">
-                {this.experiences[this.props.currPage].description}
-              </div>
+                <div  className = "description" 
+                      onMouseEnter = {(e)=>this.checkIfScrollable(e.currentTarget)}
+                      onScroll={(e)=>this.checkIfScrollable(e.currentTarget)}>
+                    <div className = {this.state.scrollable[0] ? "topScroller" : ""}>
+                      <FontAwesomeIcon icon ={this.state.scrollable[0] ? faChevronUp : ""}/>
+                    </div>
+                    {
+                      this.experiences[this.props.currPage].description.map((desc, idx) => {
+
+                          return (
+                            <div key={idx} className="desc">
+                              <FontAwesomeIcon  icon = {faChevronRight}
+                                                size = "sm"
+                                                className = "descIcon"
+                              />
+                              {desc} 
+                            </div>
+                            )
+                        })
+                    }
+                   <div className = {this.state.scrollable[1] ? "bottomScroller" : ""}>
+                    <FontAwesomeIcon icon ={this.state.scrollable[1] ? faChevronDown : ""}/>
+                   </div>
+                </div>
             
             </div>
           </div>
@@ -118,6 +185,7 @@ class Experiences extends React.Component {
     var newPageList = this.state.pageList;
     newPageList[newPage] = true;
     this.setState({pageList: newPageList});
+
   }
 
 }

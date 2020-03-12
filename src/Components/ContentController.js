@@ -56,7 +56,6 @@ class ContentController extends React.Component {
   {
     if (this.props.currContent === "Experience")
     {
-      console.log("Poopernickle")
       this.setState({
         currExpPage: newPage
       })

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../Stylesheet.css';
 import {Modal} from 'react-bootstrap';
-import Project from './Project';
-import Experience from './Experience';
+import Project from './Legacy/Project';
+import Experience from './Legacy/Experience';
 
 class InfoModal extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
