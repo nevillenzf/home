@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -18,20 +17,14 @@ class Experiences extends React.Component {
     //Set the current page to this.props.currPage
     this.experiences = [{ company: "Buildout", 
                           position: "Software Engineering Intern", 
-                          description: ["Implemented Tensorflow through the Keras Python framework to create \
-                          an Image Recognition Machine Learning model that had a 98% accuracy when \
-                          predicting 98% of the time.",
-                          "Deployed a Flask server in production through AWS ECS that hosts the trained model \
-                          and makes predictions based on received images via Celery and Sidekiq cron jobs.",
-                          "Developed a native Image Editor app within the Buildout app using Fabric js, React and\
-                           Ruby on Rails that lives within Bootstrap 3 Modal to allow for in-app image enhancement/ editing.",
+                          description: ["Implemented Tensorflow through the Keras Python framework to create an Image Recognition Machine Learning model that had a 98% accuracy when predicting 98% of the time.",
+                          "Deployed a Flask server in production through AWS ECS that hosts the trained model and makes predictions based on received images via Celery and Sidekiq cron jobs.",
+                          "Developed a native Image Editor app within the Buildout app using Fabric js, React and Ruby on Rails that lives within Bootstrap 3 Modal to allow for in-app image enhancement/ editing.",
                           "Developed a solid understanding of Amazon Cloud Service, Docker, Git, Agile(Scrum) and their role in the workflow of a software engineer."]}
                         ,{ company: "Wisconsin Computational Lab (WICIL)",
                            position: "Front End Engineer",
-                           description: ["Developing a Graphical User Interface (GUI) for a MEG \
-                           research project using Reactjs and Fabricjs.",
-                           "Users can utilize this GUI to easily construct the memory model \
-                           for architecture simulation to facilitate the debug and analysis processes."]
+                           description: ["Developing a Graphical User Interface (GUI) for a project that aimed to translate schematics into a new Hardware Description Language (HDL) using Reactjs and Fabricjs.",
+                           "Users can utilize this GUI to easily construct the memory model for architecture simulation to facilitate the debug and analysis processes."]
 
                         }];
   }

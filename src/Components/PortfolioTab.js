@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import {Card, Button} from 'react-bootstrap';
 import visualeyes from '../Images/gifs/home.gif';
 

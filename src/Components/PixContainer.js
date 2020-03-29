@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import {Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
@@ -45,7 +44,7 @@ class PixContainer extends React.Component {
         </div>
         <div id="down-arrow">
           <button className="arrowBtn" onClick={() =>this.props.moveToContent()}>
-            <FontAwesomeIcon icon={faAngleDoubleDown} />
+            <FontAwesomeIcon icon={faAngleDoubleDown} size="lg" />
           </button>
         </div>
       </div>

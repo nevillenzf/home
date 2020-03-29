@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -19,13 +18,17 @@ class Hobbies extends React.Component {
     this.hobbies = [{ title: "DotA 2", 
                           description: ["Played for UW-Madison's DotA 2 varsity team for 2 years. The team is currently ranked top 3 in North America as of March 2020.",
                                         "The team is in the playoff stage of a tournament with a prize pool of $50,000",
-                                        "Personally have reached Immortal rank, which is the highest achievable rank in DotA 2."]}
-                        ,{ title: "Music",
-                           description: ["During my free time I also enjoy playing the guitar and just jamming out to songs",
+                                        "Personally have reached Immortal rank, which is the highest achievable rank in DotA 2."],
+                                        links: {"dotabuff":"https://www.dotabuff.com/players/141692717"},
+                    },
+                    { title: "Music",
+                           description: ["During my free time I also enjoy playing the guitar and just jamming out to songs!",
                                         "Favorite genre of music would be R&B and Funk.",
-                                        "Here are some of my covers:"]
+                                        "Tom Misch, Frank Ocean & Mac Ayres are my top 3 musical inspirations"
+                                        ],
+                                        links: {"soundcloud":"https://soundcloud.com/nevsn"},
 
-                        }];
+                    }];
   }
 
   checkIfScrollable(target) {
@@ -135,7 +138,21 @@ class Hobbies extends React.Component {
           <div className ="backCard">
             <div className = "frontCard">
               <div className = "title">
-                <div><b>{this.hobbies[this.props.currPage].title}</b></div>
+              <div className="topTitle">
+                  <b>{this.hobbies[this.props.currPage].title}</b>
+                  <div className="Links">
+                  {
+                      Object.entries(this.hobbies[this.props.currPage].links).map(([key, value]) => {
+
+                          return (
+                            <div key={key} className="ProjLink">
+                               <a href={value}>{key}</a> 
+                            </div>
+                            )
+                        })
+                  }
+                  </div>
+                </div>
 
               </div>
                 <div  className = "description" 

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import 'react-image-lightbox/style.css';
 import SideBar from './SideBar';
 
@@ -21,6 +20,7 @@ class ContentController extends React.Component {
 
     this.renderContent = this.renderContent.bind(this);
     this.setPageNumber = this.setPageNumber.bind(this);
+    this.renderSideBar = this.renderSideBar.bind(this);
   }
 
   renderContent()
@@ -73,12 +73,22 @@ class ContentController extends React.Component {
       })
     }
   }
+  renderSideBar()
+  {
+
+    if (window.innerWidth > 480)
+    {
+      return (
+        <SideBar updateContent = {this.props.updateContent}
+        currContent = {this.props.currContent}/>
+      )
+    }
+  }
 
   render() {
     return (
       <div className="contentController" >
-        <SideBar updateContent = {this.props.updateContent}
-                  currContent = {this.props.currContent}/>
+        {this.renderSideBar()}
         <div className = "infoContainer">
           <div className = "infoContent">
             

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -13,32 +12,44 @@ class Projects extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {pageList: [false, false, false],
+    this.state = {pageList: [false, false, false, false, false],
                   scrollable: [false, false]};
     //Set the current page to this.props.currPage
     this.experiences = [{ title: "Cadence", 
                           tagline: "Musical togetherness, anywhere, anytime.", 
-                          description: ["Lead a team of 6 students and Live Undiscovered Music (LÜM) to develop a \
-                          Music Chatroom web app that would bring back the joys of listening to music together.",
-                          "Users can join Lounges and listen to what other people around them \
-                          are listening to or better yet become their own Loungemasters",
-                          "Designed and implemented the overall software architecture with Express.js, \
-                          React.js and PostgreSQL.",
+                          description: ["Lead a team of 6 students and Live Undiscovered Music (LÜM) to develop a Music Chatroom web app that would bring back the joys of listening to music together.",
+                          "Users can join Lounges and listen to what other people around them are listening to or better yet become their own Loungemasters",
+                          "Designed and implemented the overall software architecture with Express.js, React.js and PostgreSQL.",
                           "Integrated Spotify’s API and Socket.io to allow for synced music within the browser.",
-                          "Designed and implemented the overall UI/UX design of the application with Bootstrap & FontAwesome."]}
-                        ,{ title: "VisualEyes",
+                          "Designed and implemented the overall UI/UX design of the application with Bootstrap & FontAwesome."],
+                          links: {"github":"https://github.com/nklabjan/Music-Chatroom",
+                                  "check me out": "https://music-chatroom-client.herokuapp.com"},
+                        },
+                        { title: "UW-Live Well",
+                           tagline: "Full Stack Roommate Finder application for Software Engineering class",
+                           description: ["A full stack application developed in a week for a class.",
+                                        "Integrates React for Front end, Flask for the back-end and SQLAlchemy for the Postgres Database servers."],
+                           links: {"github":"https://github.com/nevillenzf/uw-live-well"}
+                        },
+                        { title: "VisualEyes",
                            tagline: "Making the street art experience interactive",
-                           description: ["VisualEyes is a project in collaboration with Milwaukee's Black Cat Alley \
-                           through the gAlpha Generator Start-up program. Its goal is to bring interactive \
-                           information to users through Augmented Reality and Computer Vision. Users can use \
-                           their smartphones to interact with murals in Black Cat Alley which can then display \
-                           additional information on the mural and the mural artist, and spawn an interactive 3D model."]
-
+                           description: ["VisualEyes is a project in collaboration with Milwaukee's Black Cat Alley through the gAlpha Generator Start-up program.",
+                           "Our goal is to bring interactive information to users through Augmented Reality and Computer Vision.", 
+                           "Users can use their smartphones to interact with murals in Black Cat Alley which can then display additional information on the mural and the mural artist, and spawn an interactive 3D model."],
+                           links: {"github":"https://github.com/dannysj/visualeyes"}
                         },
                         { title: "Zuck",
                            tagline: "A potential solution for kitchen supply management",
-                           description: ["Need to put actual info here"]
-
+                           description: [ "Robotic shelf powered by an Arduino using C++ and a Raspberry Pi using Python via Google's AIY kit.",
+                                          "Undergraduate Research Project to develop solutions for real-world problems by researching the interaction between human and computers.",
+                                          "Integrated Google's Cloud Speech API for voice recognition interactions."],
+                           links: {"github":"https://github.com/nevillenzf/zuck-shelf"}
+                        },
+                        { title: "This Website",
+                           tagline: "Powered by React to showcase my portfolio!",
+                           description: ["You're looking at it!",
+                                          "Created from scratch using React, FontAwesome and Bootstrap."],
+                           links: {"github":"https://github.com/nevillenzf/my-react-website"}
                         }
                       ];
 
@@ -149,7 +160,21 @@ class Projects extends React.Component {
           <div className ="backCard">
             <div className = "frontCard">
               <div className = "title">
-                <div><b>{this.experiences[this.props.currPage].title}</b></div>
+                <div className="topTitle">
+                  <b>{this.experiences[this.props.currPage].title}</b>
+                  <div className="Links">
+                  {
+                      Object.entries(this.experiences[this.props.currPage].links).map(([key, value]) => {
+
+                          return (
+                            <div key={key} className="ProjLink">
+                               <a href={value}>{key}</a> 
+                            </div>
+                            )
+                        })
+                  }
+                  </div>
+                </div>
                 <div className = "position">{this.experiences[this.props.currPage].tagline}</div>
 
               </div>
@@ -158,8 +183,8 @@ class Projects extends React.Component {
                       onScroll={(e)=>this.checkIfScrollable(e.currentTarget)}>
                     <div className = {this.state.scrollable[0] ? "topScroller" : ""}>
                       <FontAwesomeIcon icon ={this.state.scrollable[0] ? faChevronUp : ""}/>
-                    </div>
 
+                    </div>
                     {
                       this.experiences[this.props.currPage].description.map((desc, idx) => {
 

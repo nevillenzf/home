@@ -1,8 +1,7 @@
 import React from 'react';
-import '../Stylesheet.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faUser, faTools, faTasks, faIcons } from '@fortawesome/free-solid-svg-icons';
-import { ButtonGroup, Button, DropdownButton, Dropdown} from 'react-bootstrap';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBriefcase, faUser, faTools, faTasks, faIcons } from '@fortawesome/free-solid-svg-icons';
+import { ButtonGroup, Button} from 'react-bootstrap';
 import store from '../index';
 
 class SideBar extends React.Component {

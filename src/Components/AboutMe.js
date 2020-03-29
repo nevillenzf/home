@@ -1,6 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
-import FadeIn from 'react-fade-in';
 import { Image } from 'react-bootstrap';
 
 import 'react-image-lightbox/style.css';
@@ -13,7 +11,7 @@ class AboutMe extends React.Component {
         <div className = "infoCard">
           <div className ="backCard">
             <div className = "frontCard">
-              <Image src="portrait-1.jpg" rounded fluid className="portrait"/>
+              <div className="portraitContainer"><Image src="portrait-1.jpg" rounded className="portrait"/></div>
               <div className = "self-intro-1"> Hey, I'm Neville! I'm a Senior at the University of Wisconsin-Madison
                   studying Computer Sciences and am <b>actively looking for opportunities </b>!
               </div>

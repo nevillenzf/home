@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import ContentController from './ContentController';
 
 class ContentWrapper extends React.Component {
@@ -21,6 +20,7 @@ class ContentWrapper extends React.Component {
   render() {
     return (
       <div className="contentWrapper">
+
         <ContentController updateContent={this.props.updateContent} currContent={this.props.currContent}/>
       </div>)
   }

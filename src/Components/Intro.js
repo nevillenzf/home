@@ -1,7 +1,6 @@
 import React from 'react';
 import PixContainer from './PixContainer';
 
-import '../Stylesheet.css';
 
 class Intro extends React.Component {
   constructor(props) {
@@ -49,6 +48,7 @@ class Intro extends React.Component {
             onMouseEnter={() => this.isHoveringOverControl(true)}
             onMouseLeave={() => this.isHoveringOverControl(false)}
             onWheel={(e) => this.mouseWheelKing(e)}>
+
             <div className= "navBar">
               <div className= "navContent" onClick={() => this.setCurrContent("About Me")}> About Me. </div>
               <div className= "navContent" onClick={() => this.setCurrContent("Skills")}> Skills. </div>

@@ -14,6 +14,7 @@ html,body {
     margin:0;
     padding:0;
     overflow-x: hidden;
+
 }
 
 #pix {
@@ -167,11 +168,6 @@ button.socialBtn:hover, .arrowBtn:hover {
 button.arrowBtn:hover, .UpButton:hover {
   transform:scale(1.3,1.3);
 
-}
-
-.arrowBtn {
-  position: absolute;
-  left: -15px;
 }
 
 button:focus {
@@ -460,6 +456,7 @@ button.pageBullet {
 }
 
 .column-1 {
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -468,6 +465,7 @@ button.pageBullet {
 }
 
 .column-2 {
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -485,7 +483,6 @@ button.pageBullet {
 .technologies {
   display: flex;
   flex-direction: row;
-  font-size: 20px;
 }
 
 .description {
@@ -550,126 +547,4 @@ button.pageBullet {
 .ProjLink{
   margin-left: 5px;
   margin-right: 5px;
-}
-
-@media only screen and (max-device-width: 480px) {
-  .navBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    font-size: 15px;
-    background-color: rgba(255,255,255,0.8);
-  }
-
-  .PixContainer {
-    background-size: 200% 100%;
-    background-position: center;
-  }
-
-  .SocialBar {
-    display: flex;
-    justify-content: space-around;
-    vertical-align: bottom;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-
-  }
-  
-  .SocialBarContainer {
-    display: flex;
-    width: 100vw;
-    height: 40px;
-    bottom: 0px;
-    position: fixed;
-    justify-content: center;
-    z-index: 2;
-    background-color: rgba(255,255,255, 0.8);
-  }
-
-  button.socialBtn {
-    margin-bottom: 0px;
-  }
-
-  .vertLine {
-    width: 0px;
-    height: 0px;
-  }
-
-  .col {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .portraitContainer {
-    position: absolute;
-    left: 50%;
-    height: 5px;
-    width: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .portrait {
-    height: 200px;
-    width: 200px;
-    top: -100px;
-    left: -100px;
-    position: absolute;
-  }
-
-
-  .self-intro-1 {
-    top: 110px;
-    text-align: center;
-    width: 90%;
-    font-size: 14px
-  }
-
-  .self-intro-2 {
-    text-align: center;
-    font-size: 12px;
-    width: 90%;
-  }
-
-  .title {
-    font-size: 14px;
-  }
-
-  .technologies {
-    font-size: 12px !important;
-  }
-
-  .desc {
-    font-size: 12px;
-  }
-
-  .Links {
-    font-size: 14px;
-  }
-
-  .frontCard {
-    width: 100%;
-    height: 100%;
-    position:relative;
-    background-color: rgba(0,0,0,0.95);
-    top: -15px;
-    left: -15px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-  
 }

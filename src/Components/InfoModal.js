@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import {Modal} from 'react-bootstrap';
 import Project from './Legacy/Project';
 import Experience from './Legacy/Experience';

@@ -1,6 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
-import FadeIn from 'react-fade-in';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 

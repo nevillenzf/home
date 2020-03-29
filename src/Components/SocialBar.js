@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 //import ContentHandler from './ContentHandler';
@@ -21,6 +20,7 @@ class SocialBar extends React.Component {
   render() {
     return (
     <div className="SocialBarContainer">
+
     <Col >
       <div className="SocialBar">
           <button className="socialBtn" onClick={() => window.location.href='https://github.com/nevillenzf'}><FontAwesomeIcon icon={faGithub} /></button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../Stylesheet.css';
 import {CardDeck, Card, Button} from 'react-bootstrap';
 class InterestTab extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
