@@ -1,0 +1,550 @@
+.Intro {
+  text-align: center;
+  position: relative;
+  background-color: #282726;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  color: black;
+  font-family: 'Playfair Display', serif;
+
+}
+
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+
+}
+
+#pix {
+  position: absolute;
+  vertical-align: top;
+  width: 100vw;
+  background-color: grey;
+  min-height: 100vh;
+}
+
+#intro-text{
+  vertical-align: top;
+  color: #E7E5E1;
+  left: 10px;
+  top: 10px;
+}
+
+#down-arrow{
+  position: absolute;
+  color: purple;
+  bottom: 50px;
+  left: 50%;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+#up-arrow{
+  position: relative;
+  display:inline-block;
+  color: purple;
+  bottom: 50px;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+
+.ContentWrapper {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.SideBar {
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.SideBarContainer {
+  display: flex;
+  vertical-align: top;
+  width: 30vw;
+  min-height: 100vh;
+}
+
+.sideBtnGroup {
+  width: 50%;
+}
+
+.SocialBar {
+  display: flex;
+  justify-content: center;
+  vertical-align: bottom;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.SocialBarContainer {
+  display: flex;
+  width: 5vw;
+  height: 40vh;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+  justify-content: center;
+  z-index: 2;
+}
+
+.lineContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.vertLine {
+  border-right: 5px solid #282726;
+  height: 50vh;
+}
+
+.Content {
+  width: 70%;
+  background-color: white;
+  min-height: 100vh;
+  color: black;
+  overflow-y: scroll;
+}
+/*Content members*/
+
+#portfolio {
+  width: 100%;
+  height: 100vh;
+}
+
+.Pix {
+  width: 100vw;
+  min-height: 100vh;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+  object-fit: cover;
+}
+
+.PortfolioSlide {
+  position: relative;
+  width: 70vw;
+  min-height: 100vh;
+  opacity: 1;
+  object-fit: cover;
+
+}
+
+.PortfolioBG {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+
+}
+
+button.socialBtn , .arrowBtn, .UpButton{
+  width: 30px;
+  height: 30px;
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+button.socialBtn:hover, .arrowBtn:hover {
+  opacity: 0.7;
+  color: #E7E5E1;
+  cursor: pointer;
+  -webkit-transition: transform 0.3s; /* Safari prior 6.1 */
+  transition: transform 0.3s;
+}
+
+button.arrowBtn:hover, .UpButton:hover {
+  transform:scale(1.3,1.3);
+
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+button.socialBtn {
+  margin-bottom: 10px;
+}
+button.socialBtn:hover {
+  -webkit-transition: transform 0.3s; /* Safari prior 6.1 */
+  transition: transform 0.3s;
+  transform:scale(1.3,1.3);
+}
+
+button.sideBtn {
+  background-color: rgba(0, 0, 0, 0.2);
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: center;
+
+}
+
+button.selectedBtn {
+  background-color: rgba(0, 0, 0, 1);
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: center;
+}
+
+button.selectedBtn:hover {
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+button.sideBtn:hover {
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+button.pageBullet {
+  border: 0px;
+  background-color: rgba(0,0,0,0);
+  color: rgba(0,0,0,0.7);
+}
+
+#wisc-link {
+  color: #58A855;
+  text-decoration: none;
+}
+
+#wisc-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+#wisc-link:visited {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+.UpButton {
+  color: white;
+}
+
+.contentWrapper {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.PixContainer {
+  background: url('./Images/grad-pic-1.jpg');
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  background-size: 100% 110%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.contentController {
+  background: url('/grad-pic-2.jpg'), linear-gradient(rgba(151, 153, 119, 0.7),rgba(39, 39, 39, 0.7));
+  opacity: 0.9;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.ModalWrapper {
+  position: absolute !important;
+}
+
+.infoModalTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+}
+
+.modalPeriod {
+  font-size: 12px;
+}
+
+.modal-header {
+  border-bottom: 0px !important;
+}
+
+.modal-body {
+  width: 600 !important;
+  height: 400 !important;
+  color: 'black';
+  background-repeat: 'repeat';
+  font-size: 24px;
+}
+
+.modal-content {
+  width: 800 !important;
+  height: 800 !important;
+  color: 'black';
+  background-image: url("/tile.png") ;
+  background-repeat: 'repeat';
+  font-family: 'Permanent Marker', cursive;
+
+}
+
+.noteCard {
+  width: 600 !important;
+  height: 400 !important;
+  color: 'black';
+  font-family: 'Permanent Marker', cursive;
+  background-image: "tile.png";
+  background-repeat: 'repeat';
+}
+
+.infoTitle {
+  font-size: 40px !important;
+}
+
+.infoPeriod {
+  font-size: 15px !important;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  font-size: 24px;
+}
+
+.navContent {
+  cursor: pointer;
+
+}
+
+.navContent:hover {
+  transition: 0.5s ease;
+  transform: scale(1.1);
+}
+
+.introduction {
+  font-size: 48px;
+}
+
+.resumeButton {
+  background-color: black !important;
+}
+
+.resumeButton:hover {
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
+.introContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnWrapper{
+  width: 200px;
+  height: 50px;
+}
+
+.infoContainer{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 80%;
+  opacity: 1;
+}
+
+.pagesControl {
+  position: relative;
+  top: -40px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgba(0,0,0,0);
+  padding-right: 5%;
+  height: 40px;
+}
+
+.infoCard {
+  height: 100%;
+  font-family: 'Playfair Display', serif;
+}
+
+.backCard {
+  width: 90%;
+  height: 90%;
+  border: rgba(203, 202, 183, 0.8) 4px solid;
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+.frontCard {
+  width: 100%;
+  height: 100%;
+  position:relative;
+  background-color: rgba(0,0,0,0.8);
+  top: -30px;
+  left: -30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.frontCard:hover {
+  top: -15px;
+  left: -15px;
+  background-color: rgba(0,0,0,0.95);
+
+}
+
+.portrait {
+  height: 250px;
+  width: 250px;
+  top: -40px;
+  left: -40px;
+  position: absolute;
+}
+
+.self-intro-1 {
+  position: absolute;
+  right: 0px;
+  top: 50px;
+  width: 70%;
+  text-align: left;
+
+}
+
+.self-intro-2 {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  text-align: left;
+  font-size: 20px;
+
+}
+
+.column-1 {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px;
+  width: 50%;
+}
+
+.column-2 {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px;
+  width: 50%;
+}
+
+.title {
+  font-size: 24px;
+  text-align: left;
+  height: 30%;
+  margin: 20px;
+}
+
+.technologies {
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+  font-size: 18px;
+  text-align: left;
+  margin: 20px;
+  overflow: scroll;
+}
+
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.position {
+  font-size: 18px;
+}
+
+.descIcon {
+  padding-right: 5px;
+}
+
+.topScroller {
+  width: 90%;
+  height: 30px;
+  background-color: rgba(0,0,0, 0.7);
+  margin-right: 30px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bottomScroller {
+  width: 90%;
+  height: 30px;
+  background-color: rgba(0,0,0, 0.7);
+  margin-right: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
+}
+
+.topTitle {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Links {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 18px;
+  font-variant: small-caps;
+}
+.Links a{
+  color: rgba(191, 191, 191, 1) !important;
+}
+
+.ProjLink{
+  margin-left: 5px;
+  margin-right: 5px;
+}
