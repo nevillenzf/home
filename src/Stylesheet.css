@@ -260,7 +260,7 @@ button.pageBullet {
 }
 
 .contentController {
-  background: url('/grad-pic-2.jpg'), linear-gradient(rgba(151, 153, 119, 0.7),rgba(39, 39, 39, 0.7));
+  background: url('./Images/grad-pic-2.jpg'), linear-gradient(rgba(151, 153, 119, 0.7),rgba(39, 39, 39, 0.7));
   opacity: 0.9;
   background-blend-mode: overlay;
   background-repeat: no-repeat;
