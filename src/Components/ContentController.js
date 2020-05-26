@@ -27,29 +27,30 @@ class ContentController extends React.Component {
   {
     //console.log(this.props.currContent);
 
-    if (this.props.currContent === "About Me")
-    {
-      return <AboutMe/>
-    }
-    else if (this.props.currContent === "Skills")
-    {
-      return <Skills/>
-    }
-    else if (this.props.currContent === "Experience")
-    {
-      return <Experiences currPage={this.state.currExpPage}
-                          setPageNumber = {this.setPageNumber}/>
-    }
-    else if (this.props.currContent === "Projects")
-    {
-      return <Projects currPage={this.state.currProjPage}
-                       setPageNumber = {this.setPageNumber}/>
-    }
-    else if (this.props.currContent === "Hobbies")
-    {
-      return <Hobbies currPage={this.state.currHobPage}
-                      setPageNumber = {this.setPageNumber}/>
-    }
+      if (this.props.currContent === "About Me")
+      {
+        return <AboutMe/>
+      }
+      else if (this.props.currContent === "Skills")
+      {
+        return <Skills/>
+      }
+      else if (this.props.currContent === "Experience")
+      {
+        return <Experiences currPage={this.state.currExpPage}
+                            setPageNumber = {this.setPageNumber}/>
+      }
+      else if (this.props.currContent === "Projects")
+      {
+        return <Projects currPage={this.state.currProjPage}
+                         setPageNumber = {this.setPageNumber}/>
+      }
+      else if (this.props.currContent === "Hobbies")
+      {
+        return <Hobbies currPage={this.state.currHobPage}
+                        setPageNumber = {this.setPageNumber}/>
+      }
+
   }
 
   setPageNumber(newPage)
@@ -93,7 +94,6 @@ class ContentController extends React.Component {
           <div className = "infoContent">
             
             {this.renderContent()}
-
 
           </div>
         </div>

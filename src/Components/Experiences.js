@@ -112,8 +112,10 @@ class Experiences extends React.Component {
     }
   }
 
-  render() {
-    return (
+  renderContent() {
+    if (window.innerWidth > 480)
+    {
+      return (
         <div className = "infoCard">
             <div className = "pagesControl">
               {
@@ -169,6 +171,62 @@ class Experiences extends React.Component {
           </div>
         </div>
         </div>
+    )}
+    else
+    {
+      return(
+        <div className="mobileContainer">
+          {
+                      this.experiences.map((exp, idx) => {
+                        return(
+                          <div className= "infoCard">
+                            <div className ="backCard">
+                            <div className = "frontCard">
+                              <div className = "title">
+                                <div><b>{exp.company}</b></div>
+                                <div className = "position">{exp.position}</div>
+
+                              </div>
+                                <div  className = "description" 
+                                      onMouseEnter = {(e)=>this.checkIfScrollable(e.currentTarget)}
+                                      onScroll={(e)=>this.checkIfScrollable(e.currentTarget)}>
+                                    <div className = {this.state.scrollable[0] ? "topScroller" : ""}>
+                                      <FontAwesomeIcon icon ={this.state.scrollable[0] ? faChevronUp : ""}/>
+                                    </div>
+                                    {
+                                      exp.description.map((desc, idx) => {
+
+                                          return (
+                                            <div key={idx} className="desc">
+                                              <FontAwesomeIcon  icon = {faChevronRight}
+                                                                size = "sm"
+                                                                className = "descIcon"
+                                              />
+                                              {desc} 
+                                            </div>
+                                            )
+                                        })
+                                    }
+                                  <div className = {this.state.scrollable[1] ? "bottomScroller" : ""}>
+                                    <FontAwesomeIcon icon ={this.state.scrollable[1] ? faChevronDown : ""}/>
+                                  </div>
+                                </div>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        )
+                      })
+                    }
+        </div>
+      )
+          
+    }
+  }
+  
+  render() {
+    return(
+      this.renderContent()
     )
   }
 

@@ -10,7 +10,7 @@ class AboutMe extends React.Component {
     return (
         <div className = "infoCard">
           <div className ="backCard">
-            <div className = "frontCard">
+            <div className = {window.innerWidth > 480 ? "frontCard" : "infoFrontCard"}>
               <div className="portraitContainer"><Image src="portrait-1.jpg" rounded className="portrait"/></div>
               <div className = "self-intro-1"> Hey, I'm Neville! I'm a Senior at the University of Wisconsin-Madison
                   studying Computer Sciences and am <b>actively looking for opportunities </b>!

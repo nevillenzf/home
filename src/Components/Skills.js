@@ -31,6 +31,7 @@ class Skills extends React.Component {
                 <div><FontAwesomeIcon icon= {faChevronRight} /> Express.js </div>
                 <div><FontAwesomeIcon icon= {faChevronRight} /> Flask </div>
                 <div><FontAwesomeIcon icon= {faChevronRight} /> Docker </div>
+                <div><FontAwesomeIcon icon= {faChevronRight} /> Java </div>
                 <div><FontAwesomeIcon icon= {faChevronRight} /> HTML & CSS </div>
               </div>
             </div>

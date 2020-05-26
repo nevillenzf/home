@@ -3,8 +3,7 @@ import {Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 import FadeIn from 'react-fade-in';
-//import portrait from '../Images/portrait-1.jpg';
-
+import resume from '../Images/resume.pdf';
 class PixContainer extends React.Component {
 //Created a component for the picture because might include onhover functions to interact with picture
 
@@ -21,8 +20,7 @@ class PixContainer extends React.Component {
     {
       return (
         <FadeIn>
-          <a  href="/resume.pdf"
-              target="_blank">
+          <a  href={resume}>
 
               <Button className = "resumeButton"
                   variant="dark"

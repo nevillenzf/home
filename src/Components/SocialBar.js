@@ -23,16 +23,24 @@ class SocialBar extends React.Component {
 
     <Col >
       <div className="SocialBar">
-          <button className="socialBtn" onClick={() => window.location.href='https://github.com/nevillenzf'}><FontAwesomeIcon icon={faGithub} /></button>
-          <button className="socialBtn" onClick={() => window.location.href='https://linkedin.com/in/nevillenzf'}> <FontAwesomeIcon icon={faLinkedin} /> </button>
-          <button className="socialBtn" onClick={() => window.location.href='https://instagram.com/nevillenzf'}> <FontAwesomeIcon icon={faInstagram} /> </button>
-          <button className="socialBtn" onClick={() => window.location.href='https://facebook.com/nevillenzf'}> <FontAwesomeIcon icon={faFacebook} /> </button>
+          <button className="socialBtn" onClick={() => window.location.href='https://github.com/nevillenzf'}>
+            <FontAwesomeIcon icon={faGithub} size={window.innerWidth > 480 ? "1x" : "lg"}/>
+          </button>
+          <button className="socialBtn" onClick={() => window.location.href='https://linkedin.com/in/nevillenzf'}> 
+            <FontAwesomeIcon icon={faLinkedin} size={window.innerWidth > 480 ? "1x" : "lg"}/> 
+          </button>
+          <button className="socialBtn" onClick={() => window.location.href='https://instagram.com/nevillenzf'}> 
+            <FontAwesomeIcon icon={faInstagram} size={window.innerWidth > 480 ? "1x" : "lg"}/> 
+          </button>
+          <button className="socialBtn" onClick={() => window.location.href='https://facebook.com/nevillenzf'}> 
+            <FontAwesomeIcon icon={faFacebook} size={window.innerWidth > 480 ? "1x" : "lg"}/> 
+          </button>
 
         {/* Vertical line for styling purposes*/}
       </div>
-    <div className="lineContainer">
-      <div className="vertLine"/>
-    </div>
+      <div className="lineContainer">
+        <div className="vertLine"/>
+      </div>
     </Col>
 
     </div>)

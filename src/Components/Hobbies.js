@@ -113,9 +113,11 @@ class Hobbies extends React.Component {
       this.props.setPageNumber(idx);
     }
   }
-
-  render() {
-    return (
+  
+  renderContent() {
+    if (window.innerWidth > 480)
+    {
+      return (
         <div className = "infoCard">
             <div className = "pagesControl">
               {
@@ -184,6 +186,75 @@ class Hobbies extends React.Component {
           </div>
         </div>
         </div>
+    )}
+    else
+    {
+      return(
+        <div className="mobileContainer">
+          {
+                      this.hobbies.map((hobby, idx) => {
+                        return(
+                          <div className= "infoCard">
+                            <div className ="backCard">
+                            <div className = "frontCard">
+                              <div className = "title">
+                                <div className="topTitle">
+                                  <b>{hobby.title}</b>
+                                  <div className="Links">
+                                  {
+                                      Object.entries(hobby.links).map(([key, value]) => {
+                
+                                          return (
+                                            <div key={key} className="ProjLink">
+                                              <a href={value}>{key}</a> 
+                                            </div>
+                                            )
+                                        })
+                                  }
+                                  </div>
+                                </div>
+                
+                              </div>
+                                <div  className = "description"
+                                      onMouseEnter = {(e)=>this.checkIfScrollable(e.currentTarget)}
+                                      onScroll={(e)=>this.checkIfScrollable(e.currentTarget)}>
+                                    <div className = {this.state.scrollable[0] ? "topScroller" : ""}>
+                                      <FontAwesomeIcon icon ={this.state.scrollable[0] ? faChevronUp : ""}/>
+                                    </div>
+                                    {
+                                      hobby.description.map((desc, idx) => {
+
+                                          return (
+                                            <div key={idx} className="desc">
+                                              <FontAwesomeIcon  icon = {faChevronRight}
+                                                                size = "sm"
+                                                                className = "descIcon"
+                                              />
+                                              {desc} 
+                                            </div>
+                                            )
+                                        })
+                                    }
+                                    <div className = {this.state.scrollable[1] ? "bottomScroller" : ""}>
+                                      <FontAwesomeIcon icon ={this.state.scrollable[1] ? faChevronDown : ""}/>
+                                  </div>
+                                </div>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        )
+                      })
+                    }
+        </div>
+      )
+          
+    }
+  }
+  
+  render() {
+    return(
+      this.renderContent()
     )
   }
 

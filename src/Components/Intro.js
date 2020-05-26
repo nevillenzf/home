@@ -1,7 +1,6 @@
 import React from 'react';
 import PixContainer from './PixContainer';
 
-
 class Intro extends React.Component {
   constructor(props) {
   super(props);
@@ -43,6 +42,7 @@ class Intro extends React.Component {
   }
 
   render() {
+
     return (
       <div  className= "Intro"
             onMouseEnter={() => this.isHoveringOverControl(true)}

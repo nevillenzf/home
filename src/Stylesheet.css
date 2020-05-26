@@ -34,11 +34,13 @@ html,body {
 #down-arrow{
   position: absolute;
   color: purple;
-  bottom: 50px;
-  left: 50%;
+  bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 #up-arrow{
@@ -79,17 +81,19 @@ html,body {
 
 .SocialBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   vertical-align: bottom;
   flex-direction: column;
+  height: 20vh;
   width: 100%;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .SocialBarContainer {
   display: flex;
   width: 5vw;
-  height: 40vh;
+  height: 35vh;
   right: 0px;
   bottom: 0px;
   position: fixed;
@@ -149,15 +153,18 @@ html,body {
 button.socialBtn , .arrowBtn, .UpButton{
   width: 30px;
   height: 30px;
+  display: flex;
   font-size: 100%;
   font-family: inherit;
   border: 0;
   padding: 0;
   background: transparent;
+  align-items: center;
+  justify-content: center;
 }
 
 button.socialBtn:hover, .arrowBtn:hover {
-  opacity: 0.7;
+  opacity: 1;
   color: #E7E5E1;
   cursor: pointer;
   -webkit-transition: transform 0.3s; /* Safari prior 6.1 */
@@ -171,16 +178,12 @@ button.arrowBtn:hover, .UpButton:hover {
 
 .arrowBtn {
   position: absolute;
-  left: -15px;
 }
 
 button:focus {
   outline: 0 !important;
 }
 
-button.socialBtn {
-  margin-bottom: 10px;
-}
 button.socialBtn:hover {
   -webkit-transition: transform 0.3s; /* Safari prior 6.1 */
   transition: transform 0.3s;
@@ -192,8 +195,8 @@ button.sideBtn {
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: horizontal;
-  justify-content: center;
-
+  justify-content: space-between;
+  align-items: center
 }
 
 button.selectedBtn {
@@ -201,7 +204,8 @@ button.selectedBtn {
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: horizontal;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 button.selectedBtn:hover {
@@ -379,7 +383,7 @@ button.pageBullet {
 .infoContent {
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 80vh;
   width: 80%;
   opacity: 1;
 }
@@ -478,7 +482,7 @@ button.pageBullet {
 .title {
   font-size: 24px;
   text-align: left;
-  height: 30%;
+  height: 20%;
   margin: 20px;
 }
 
@@ -491,6 +495,7 @@ button.pageBullet {
 .description {
   font-size: 18px;
   text-align: left;
+  height: 80%;
   margin: 20px;
   overflow: scroll;
 }
@@ -552,6 +557,23 @@ button.pageBullet {
   margin-right: 5px;
 }
 
+.projCar{
+ height: 100%;
+ display: flex;
+ align-items: center;
+}
+
+.projImageContainer {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.projImage{
+  width: 85%;
+  height: 50%;
+}
+
 @media only screen and (max-device-width: 480px) {
   .navBar {
     display: flex;
@@ -560,6 +582,8 @@ button.pageBullet {
     position: fixed;
     z-index: 1;
     width: 100%;
+    height: 40px;
+    align-items: center;
     font-size: 15px;
     background-color: rgba(255,255,255,0.8);
   }
@@ -576,13 +600,14 @@ button.pageBullet {
     flex-direction: row;
     width: 100%;
     align-items: center;
-
+    height: 100%;
+    margin-bottom: 0px;
   }
   
   .SocialBarContainer {
     display: flex;
     width: 100vw;
-    height: 40px;
+    height: 55px;
     bottom: 0px;
     position: fixed;
     justify-content: center;
@@ -671,5 +696,53 @@ button.pageBullet {
     align-items: center;
     padding: 10px;
   }
+
+  .infoContent {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 80%;
+    opacity: 1;
+  }
   
+  .infoCard {
+    height: auto;
+    min-height: 60vh;
+    max-height: 80vh;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+  }
+
+  .backCard {
+    width: 90%;
+    height: auto;
+    border: rgba(203, 202, 183, 0.8) 4px solid;
+    position: relative;
+    top: 30px;
+    left: 30px;
+  }
+
+  .infoContainer{
+    overflow-y: scroll;
+  }
+
+  .infoFrontCard {
+    width: 100%;
+    height: 70vh;
+    position:relative;
+    background-color: rgba(0,0,0,0.95);
+    top: -15px;
+    left: -15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
 }

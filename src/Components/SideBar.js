@@ -2,6 +2,7 @@ import React from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faBriefcase, faUser, faTools, faTasks, faIcons } from '@fortawesome/free-solid-svg-icons';
 import { ButtonGroup, Button} from 'react-bootstrap';
+
 import store from '../index';
 
 class SideBar extends React.Component {
@@ -15,19 +16,23 @@ class SideBar extends React.Component {
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "About Me" ? "selectedBtn" : "sideBtn"}
                 onClick={()=> this.props.updateContent("About Me")}>
-                About me</Button>
+                About me </Button>
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "Skills" ? "selectedBtn" : "sideBtn"}
-                onClick={() => this.props.updateContent("Skills")}>Skills</Button>
+                onClick={() => this.props.updateContent("Skills")}>
+                Skills </Button>
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "Experience" ? "selectedBtn" : "sideBtn"}
-                onClick={() => this.props.updateContent("Experience")}>Experience</Button>
+                onClick={() => this.props.updateContent("Experience")}>
+                Experience </Button>
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "Projects" ? "selectedBtn" : "sideBtn"}
-                onClick={() => this.props.updateContent("Projects")}>Projects</Button>
+                onClick={() => this.props.updateContent("Projects")}>
+                Projects </Button>
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "Hobbies" ? "selectedBtn" : "sideBtn"}
-                onClick={() => this.props.updateContent("Hobbies")}>Hobbies</Button>
+                onClick={() => this.props.updateContent("Hobbies")}>
+                Hobbies </Button>
       </ButtonGroup>
       </div>
     </div>)
