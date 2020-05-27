@@ -32,7 +32,7 @@ class SideBar extends React.Component {
         <Button variant="dark" size="lg"
                 className={this.props.currContent === "Hobbies" ? "selectedBtn" : "sideBtn"}
                 onClick={() => this.props.updateContent("Hobbies")}>
-                Hobbies </Button>
+                Leisure </Button>
       </ButtonGroup>
       </div>
     </div>)

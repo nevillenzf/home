@@ -16,13 +16,13 @@ class Hobbies extends React.Component {
                   scrollable: [false, false]}; //false means that it's not scrollable [TOP,BOTTOM]
     //Set the current page to this.props.currPage
     this.hobbies = [{ title: "DotA 2", 
-                          description: ["Played for UW-Madison's DotA 2 varsity team for 2 years. The team is currently ranked top 3 in North America as of March 2020.",
-                                        "The team is in the playoff stage of a tournament with a prize pool of $50,000",
-                                        "Personally have reached Immortal rank, which is the highest achievable rank in DotA 2."],
+                          description: ["UW-Madison Varsity Team 2018 - 2020.",
+                                        " 5th/6th in North America for the 2019-2020 Collegiate Starleague Season.",
+                                        "Achieved Immortal rank."],
                                         links: {"dotabuff":"https://www.dotabuff.com/players/141692717"},
                     },
                     { title: "Music",
-                           description: ["During my free time I also enjoy playing the guitar and just jamming out to songs!",
+                           description: ["Enjoy playing the guitar and just jamming out to songs!",
                                         "Favorite genre of music would be R&B and Funk.",
                                         "Tom Misch, Frank Ocean & Mac Ayres are my top 3 musical inspirations"
                                         ],

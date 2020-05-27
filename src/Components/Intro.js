@@ -54,7 +54,7 @@ class Intro extends React.Component {
               <div className= "navContent" onClick={() => this.setCurrContent("Skills")}> Skills. </div>
               <div className= "navContent" onClick={() => this.setCurrContent("Experience")}> Experience. </div>
               <div className= "navContent" onClick={() => this.setCurrContent("Projects")}> Projects. </div>
-              <div className= "navContent" onClick={() => this.setCurrContent("Hobbies")}> Hobbies. </div>
+              <div className= "navContent" onClick={() => this.setCurrContent("Hobbies")}> Leisure. </div>
             </div>
             <div id="pix">
               <PixContainer moveToContent={this.moveToContent}

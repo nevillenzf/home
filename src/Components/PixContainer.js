@@ -21,7 +21,6 @@ class PixContainer extends React.Component {
       return (
         <FadeIn>
           <a  href={resume}>
-
               <Button className = "resumeButton"
                   variant="dark"
                   size="lg">

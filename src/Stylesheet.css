@@ -84,7 +84,7 @@ html,body {
   justify-content: space-between;
   vertical-align: bottom;
   flex-direction: column;
-  height: 20vh;
+  height: 25vh;
   width: 100%;
   align-items: center;
   margin-bottom: 20px;
@@ -191,7 +191,8 @@ button.socialBtn:hover {
 }
 
 button.sideBtn {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255,255,255, 0.8);
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: horizontal;
@@ -209,12 +210,12 @@ button.selectedBtn {
 }
 
 button.selectedBtn:hover {
-  transition: 0.3s;
+  transition: 0.7s;
   background-color: rgba(0, 0, 0, 1) !important;
 }
 
 button.sideBtn:hover {
-  transition: 0.3s;
+  transition: 0.7s;
   background-color: rgba(0, 0, 0, 1) !important;
 }
 
